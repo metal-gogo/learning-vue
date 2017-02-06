@@ -1,6 +1,6 @@
 # Learning Vue 2
 
-Following tutorial from [https://laracasts.com/series/learn-vue-2-step-by-step/episodes/3?autoplay=true](Learn Vue 2: Step by step)
+Following tutorial from [Learn Vue 2: Step by step](https://laracasts.com/series/learn-vue-2-step-by-step/episodes/3?autoplay=true)
 
 ## Learning path
 
