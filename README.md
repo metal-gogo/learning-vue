@@ -6,7 +6,7 @@ Following tutorial from [Learn Vue 2: Step by step](https://laracasts.com/series
 
 - [X] Basic data binding
 - [X] Setup Vue devtools
-- [ ] Lists
+- [X] Lists
 - [ ] Vue event listeners
 - [ ] Attribute and class binding
 - [ ] The need for computed properties
