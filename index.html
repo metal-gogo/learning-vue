@@ -2,39 +2,42 @@
 <html>
   <head>
     <title>Learning Vue</title>
-    <style>
-      .color-read {
-        color: red;
-      }
-      .is-loading {
-        background: red;
-      }
-    </style>
   </head>
   <body>
     <div id="root">
-      <h1 :class="className">Heading with a class</h1>
-      <button :title="title">Hover over me</button>
-      <button
-        :class="{ 'is-loading': isLoading }"
-        @click="toggleClass"
-        :title="titleRealistic">
-        Click me
-      </button>
+      <h1>
+        {{ reversedMessage }}
+      </h1>
+      <h2>All tasks</h2>
+      <ul>
+        <li v-for="task in tasks" v-text="task.description"></li>
+      </ul>
+      <h2>Incompleted tasks</h2>
+      <ul>
+        <li v-for="task in incompletedTasks" v-text="task.description"></li>
+      </ul>
     </div>
     <script src="https://unpkg.com/vue@2.1.10/dist/vue.js"></script>
     <script>
       const app = new Vue({
         el: '#root',
         data: {
-          className: 'color-read',
-          isLoading: false,
-          title: 'The title is being set through JavaScript',
-          titleRealistic: 'Realistic title of button hehehe'
+          message: 'Hola Edmundo',
+          tasks: [
+            { description: 'Go to the store', completed: true },
+            { description: 'Finish example', completed: false },
+            { description: 'Make donation', completed: false },
+            { description: 'Clear inbox', completed: false },
+            { description: 'Make dinner', completed: false },
+            { description: 'Clean room', completed: true },
+          ]
         },
-        methods: {
-          toggleClass() {
-            this.isLoading = !this.isLoading;
+        computed: {
+          incompletedTasks() {
+            return this.tasks.filter(task => !task.completed);
+          },
+          reversedMessage() {
+            return this.message.split('').reverse().join('');
           }
         }
       });

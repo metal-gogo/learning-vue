@@ -9,7 +9,7 @@ Following tutorial from [Learn Vue 2: Step by step](https://laracasts.com/series
 - [X] Lists
 - [X] Vue event listeners
 - [X] Attribute and class binding
-- [ ] The need for computed properties
+- [X] The need for computed properties
 - [ ] Components 101
 - [ ] Components within components
 - [ ] Practical component excercise #1: Message
