@@ -2,27 +2,39 @@
 <html>
   <head>
     <title>Learning Vue</title>
+    <style>
+      .color-read {
+        color: red;
+      }
+      .is-loading {
+        background: red;
+      }
+    </style>
   </head>
   <body>
     <div id="root">
-      <ul>
-        <li v-for="name in names" v-text="name"></li>
-      </ul>
-      <input type="text" v-model="newName">
-      <button @click="addName">Add name</button>
+      <h1 :class="className">Heading with a class</h1>
+      <button :title="title">Hover over me</button>
+      <button
+        :class="{ 'is-loading': isLoading }"
+        @click="toggleClass"
+        :title="titleRealistic">
+        Click me
+      </button>
     </div>
     <script src="https://unpkg.com/vue@2.1.10/dist/vue.js"></script>
     <script>
       const app = new Vue({
         el: '#root',
         data: {
-          names: ['Joe', 'Mary', 'Jane', 'Jack'],
-          newName: ''
+          className: 'color-read',
+          isLoading: false,
+          title: 'The title is being set through JavaScript',
+          titleRealistic: 'Realistic title of button hehehe'
         },
         methods: {
-          addName() {
-            this.names.push(this.newName);
-            this.newName = '';
+          toggleClass() {
+            this.isLoading = !this.isLoading;
           }
         }
       });

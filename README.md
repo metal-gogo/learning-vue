@@ -8,7 +8,7 @@ Following tutorial from [Learn Vue 2: Step by step](https://laracasts.com/series
 - [X] Setup Vue devtools
 - [X] Lists
 - [X] Vue event listeners
-- [ ] Attribute and class binding
+- [X] Attribute and class binding
 - [ ] The need for computed properties
 - [ ] Components 101
 - [ ] Components within components
