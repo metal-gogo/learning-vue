@@ -13,10 +13,10 @@ Following tutorial from [Learn Vue 2: Step by step](https://laracasts.com/series
 - [X] Components 101
 - [X] Components within components
 - [X] Practical component excercise #1: Message
-- [ ] Practical component excercise #2: Modal
+- [X] Practical component excercise #2: Modal
 - [ ] Practical component excercise #3: Tabs
-- [ ] Component communicaiton example #1: Custom events
-- [ ] Component communicaiton example #2: Event dispatcher
+- [ ] Component communication example #1: Custom events
+- [ ] Component communication example #2: Event dispatcher
 - [ ] Named slots in a nutshell
 - [ ] Single-use components and inline templates
 - [ ] Webpack and vue-cli
