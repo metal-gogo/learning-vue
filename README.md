@@ -14,7 +14,7 @@ Following tutorial from [Learn Vue 2: Step by step](https://laracasts.com/series
 - [X] Components within components
 - [X] Practical component excercise #1: Message
 - [X] Practical component excercise #2: Modal
-- [ ] Practical component excercise #3: Tabs
+- [X] Practical component excercise #3: Tabs
 - [ ] Component communication example #1: Custom events
 - [ ] Component communication example #2: Event dispatcher
 - [ ] Named slots in a nutshell

@@ -6,10 +6,20 @@
   </head>
   <body>
     <div id="root" class="container">
-      <modal v-if="showModal" @close="showModal = false">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.</p>
-      </modal>
-      <button @click="showModal = true">Show modal</button>
+      <tabs>
+        <tab name="About us" :selected="true">
+          <h1>About us</h1>
+          <p>Here is the content for <em>About us</em> tab</p>
+        </tab>
+        <tab name="About our culture">
+          <h1>About our culture</h1>
+          <p>Here is the content for <em>About our culture</em> tab</p>
+        </tab>
+        <tab name="About our work">
+          <h1>About our vision</h1>
+          <p>Here is the content for <em>About our vision</em> tab</p>
+        </tab>
+      </tabs>
     </div>
     <script src="https://unpkg.com/vue@2.1.10/dist/vue.js"></script>
     <script src="main.js"></script>

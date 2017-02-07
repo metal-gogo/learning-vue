@@ -1,17 +1,61 @@
-Vue.component('modal', {
-  props: [
-    'body'
-  ],
+//TODO: Add accesibility to elements!!!
+
+Vue.component('tabs', {
+  methods: {
+    selectTab(selectedTab) {
+      this.tabs.forEach(tab => {
+        tab.isActive = (tab.name === selectedTab.name);
+      });
+    }
+  },
   template: `
-    <div class="modal is-active"">
-      <div class="modal-background" @click="$emit('close')"></div>
-      <div class="modal-content">
-        <div class="box">
-          <slot></slot>
-        </div>
+    <div>
+      <div class="tabs">
+        <ul>
+          <li v-for="tab in tabs" :class="{'is-active': tab.isActive}">
+            <a :href="tab.href" @click="selectTab(tab)">{{tab.name}}</a>
+          </li>
+        </ul>
       </div>
-      <button class="modal-close" @click="$emit('close')"></button>
+      <div class="tabs-details">
+        <slot></slot>
+      </div>
     </div>
+  `,
+  data() {
+    return {
+      tabs: []
+    };
+  },
+  created() {
+    this.tabs = this.$children;
+  }
+});
+
+Vue.component('tab', {
+  computed: {
+    href() {
+      return `#${this.name.toLowerCase().replace(/ /g, '-')}`;
+    }
+  },
+  data() {
+    return {
+      isActive: false
+    };
+  },
+  mounted() {
+    this.isActive = this.selected
+  },
+  props: {
+    name: {
+      required: true
+    },
+    selected: {
+      default: false
+    }
+  },
+  template: `
+    <div v-show="isActive" role="tab"><slot></slot></div>
   `
 });
 
