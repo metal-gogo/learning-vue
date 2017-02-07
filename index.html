@@ -6,20 +6,8 @@
   </head>
   <body>
     <div id="root" class="container">
-      <tabs>
-        <tab name="About us" :selected="true">
-          <h1>About us</h1>
-          <p>Here is the content for <em>About us</em> tab</p>
-        </tab>
-        <tab name="About our culture">
-          <h1>About our culture</h1>
-          <p>Here is the content for <em>About our culture</em> tab</p>
-        </tab>
-        <tab name="About our work">
-          <h1>About our vision</h1>
-          <p>Here is the content for <em>About our vision</em> tab</p>
-        </tab>
-      </tabs>
+      <coupon @applied="onCouponApplied"></coupon>
+      <h1 v-if="couponApplied">A coupon was applied!</h1>
     </div>
     <script src="https://unpkg.com/vue@2.1.10/dist/vue.js"></script>
     <script src="main.js"></script>

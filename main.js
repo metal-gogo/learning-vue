@@ -1,67 +1,24 @@
 //TODO: Add accesibility to elements!!!
 
-Vue.component('tabs', {
+Vue.component('coupon', {
   methods: {
-    selectTab(selectedTab) {
-      this.tabs.forEach(tab => {
-        tab.isActive = (tab.name === selectedTab.name);
-      });
+    onCouponApplied() {
+      this.$emit('applied');
     }
   },
   template: `
-    <div>
-      <div class="tabs">
-        <ul>
-          <li v-for="tab in tabs" :class="{'is-active': tab.isActive}">
-            <a :href="tab.href" @click="selectTab(tab)">{{tab.name}}</a>
-          </li>
-        </ul>
-      </div>
-      <div class="tabs-details">
-        <slot></slot>
-      </div>
-    </div>
-  `,
-  data() {
-    return {
-      tabs: []
-    };
-  },
-  created() {
-    this.tabs = this.$children;
-  }
-});
-
-Vue.component('tab', {
-  computed: {
-    href() {
-      return `#${this.name.toLowerCase().replace(/ /g, '-')}`;
-    }
-  },
-  data() {
-    return {
-      isActive: false
-    };
-  },
-  mounted() {
-    this.isActive = this.selected
-  },
-  props: {
-    name: {
-      required: true
-    },
-    selected: {
-      default: false
-    }
-  },
-  template: `
-    <div v-show="isActive" role="tab"><slot></slot></div>
+    <input placeholder="Enter your coupon code" @blur="onCouponApplied">
   `
 });
 
 new Vue({
-  el: '#root',
   data: {
-    showModal: false
+    couponApplied: false
+  },
+  el: '#root',
+  methods: {
+    onCouponApplied() {
+      this.couponApplied = true;
+    }
   }
 });
