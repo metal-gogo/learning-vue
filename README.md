@@ -16,7 +16,7 @@ Following tutorial from [Learn Vue 2: Step by step](https://laracasts.com/series
 - [X] Practical component excercise #2: Modal
 - [X] Practical component excercise #3: Tabs
 - [X] Component communication example #1: Custom events
-- [ ] Component communication example #2: Event dispatcher
+- [X] Component communication example #2: Event dispatcher
 - [ ] Named slots in a nutshell
 - [ ] Single-use components and inline templates
 - [ ] Webpack and vue-cli
