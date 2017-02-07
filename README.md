@@ -18,7 +18,7 @@ Following tutorial from [Learn Vue 2: Step by step](https://laracasts.com/series
 - [X] Component communication example #1: Custom events
 - [X] Component communication example #2: Event dispatcher
 - [X] Named slots in a nutshell
-- [ ] Single-use components and inline templates
+- [X] Single-use components and inline templates
 - [ ] Webpack and vue-cli
 - [ ] Hot module replacement
 - [ ] Vue Ajax Requests with axios

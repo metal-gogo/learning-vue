@@ -6,16 +6,14 @@
     </head>
     <body>
       <div id="root" class="container">
-        <modal>
-          <template slot="header">
-            My title
-          </template>
-          Here is my main content
-          <template slot="footer">
-            <a class="button is-success">Save changes</a>
-            <a class="button">Cancel</a>
-          </template>
-        </modal>
+        <progress-view inline-template>
+          <div>
+            <h1>Your progrres through this course is {{ completionRate }}%</h1>
+            <p>
+              <button @click="completionRate += 10">Update completion rate</button>
+            </p>
+          </div>
+        </progress-view>
       </div>
       <script src="https://unpkg.com/vue@2.1.10/dist/vue.js"></script>
       <script src="main.js"></script>
