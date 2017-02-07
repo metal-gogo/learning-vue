@@ -12,7 +12,7 @@ Following tutorial from [Learn Vue 2: Step by step](https://laracasts.com/series
 - [X] The need for computed properties
 - [X] Components 101
 - [X] Components within components
-- [ ] Practical component excercise #1: Message
+- [X] Practical component excercise #1: Message
 - [ ] Practical component excercise #2: Modal
 - [ ] Practical component excercise #3: Tabs
 - [ ] Component communicaiton example #1: Custom events
