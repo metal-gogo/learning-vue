@@ -1,9 +1,9 @@
-//TODO: Add accesibility to elements!!!
+window.Event = new Vue();
 
 Vue.component('coupon', {
   methods: {
     onCouponApplied() {
-      this.$emit('applied');
+      Event.$emit('applied');
     }
   },
   template: `
@@ -16,9 +16,7 @@ new Vue({
     couponApplied: false
   },
   el: '#root',
-  methods: {
-    onCouponApplied() {
-      this.couponApplied = true;
-    }
+  created() {
+    Event.$on('applied', () => alert('well done'));
   }
 });
