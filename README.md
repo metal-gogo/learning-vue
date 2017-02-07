@@ -10,7 +10,7 @@ Following tutorial from [Learn Vue 2: Step by step](https://laracasts.com/series
 - [X] Vue event listeners
 - [X] Attribute and class binding
 - [X] The need for computed properties
-- [ ] Components 101
+- [X] Components 101
 - [ ] Components within components
 - [ ] Practical component excercise #1: Message
 - [ ] Practical component excercise #2: Modal

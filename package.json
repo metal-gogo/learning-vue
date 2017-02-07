@@ -1,0 +1,10 @@
+{
+  "name": "learning-vue",
+  "version": "1.6.0",
+  "repository": "https://github.com/metal-gogo/learning-vue.git",
+  "author": "Daniel González <d.g.g69@me.com>",
+  "license": "MIT",
+  "dependencies": {
+    "stylelint-config-gbm": "1.0.0"
+  }
+}

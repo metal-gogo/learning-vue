@@ -5,42 +5,11 @@
   </head>
   <body>
     <div id="root">
-      <h1>
-        {{ reversedMessage }}
-      </h1>
-      <h2>All tasks</h2>
-      <ul>
-        <li v-for="task in tasks" v-text="task.description"></li>
-      </ul>
-      <h2>Incompleted tasks</h2>
-      <ul>
-        <li v-for="task in incompletedTasks" v-text="task.description"></li>
-      </ul>
+      <task>Go to the store</task>
+      <task>Go to the bank</task>
+      <task>Go to work</task>
     </div>
     <script src="https://unpkg.com/vue@2.1.10/dist/vue.js"></script>
-    <script>
-      const app = new Vue({
-        el: '#root',
-        data: {
-          message: 'Hola Edmundo',
-          tasks: [
-            { description: 'Go to the store', completed: true },
-            { description: 'Finish example', completed: false },
-            { description: 'Make donation', completed: false },
-            { description: 'Clear inbox', completed: false },
-            { description: 'Make dinner', completed: false },
-            { description: 'Clean room', completed: true },
-          ]
-        },
-        computed: {
-          incompletedTasks() {
-            return this.tasks.filter(task => !task.completed);
-          },
-          reversedMessage() {
-            return this.message.split('').reverse().join('');
-          }
-        }
-      });
-    </script>
+    <script src="main.js"></script>
   </body>
 </html>
