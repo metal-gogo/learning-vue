@@ -64,36 +64,53 @@ class Form {
   }
 
   data() {
-    let data = Object.assign({}, this);
+    let data = {};
 
-    delete data.originalData;
-    delete data.errors;
+    for(let property in this.originalData) {
+      data[property] = this[property];
+    }
 
     return data;
   }
 
-  onFail(error) {
-    this.errors.record(error.response.data);
+  onFail(errors) {
+    this.errors.record(errors);
   }
 
-  onSuccess(response) {
+  onSuccess(data) {
     this.reset();
-    alert(response.data.message);
+    this.errors.clear();
+    alert(data.message);
+  }
+
+  delete(url) {
+    return this.submit('delete', url);
+  }
+
+  post(url) {
+    return this.submit('post', url);
   }
 
   reset() {
     for(let field in this.originalData) {
       this[field] = '';
     }
-
-    this.errors.clear();
   }
 
   submit(requestType, url) {
-    console.log(requestType);
-    axios[requestType](url, this.data())
-      .then(this.onSuccess.bind(this))
-      .catch(this.onFail.bind(this));
+    return new Promise((resolve, reject) => {
+      axios[requestType](url, this.data())
+        .then(response => {
+          this.onSuccess(response.data);
+
+          resolve(response.data);
+        })
+        .catch(error => {
+          this.onFail(error.response.data);
+
+          reject(error.response.data);
+        });
+    });
 
   }
 }
@@ -109,7 +126,9 @@ export default {
   },
   methods: {
     onSubmit() {
-      this.form.submit('post', 'someURL');
+      this.form.post('someURL')
+        .then(data => alert('handling it!'))
+        .catch(errors => alert('Ooops!'));
     },
   },
   name: 'app'

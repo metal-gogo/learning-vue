@@ -24,7 +24,7 @@ Following tutorial from [Learn Vue 2: Step by step](https://laracasts.com/series
 - [X] Vue Ajax Requests with axios
 - [X] Object-oriented forms: Part 1
 - [X] Object-oriented forms: Part 2
-- [ ] Object-oriented forms: Part 3
+- [X] Object-oriented forms: Part 3
 - [ ] Webpack config from scratch
 - [ ] This is Laravel mix
 - [ ] Shared state 101
