@@ -2,7 +2,7 @@
   <div id="app" class="container">
     <message>Hello there again!</message>
     <counter></counter>
-    <form method="GET" @submit.prevent="onSubmit">
+    <form method="GET" @submit.prevent="onSubmit" @keydown="errors.clear($event.target.name)">
       <div class="control">
         <label for="name" class="label">Project name:</label>
         <input type="text" id="name" name="name" class="input" v-model="name">
@@ -27,7 +27,7 @@ import Counter from './components/Counter.vue';
 
 class Errors {
   constructor() {
-    this.errors = {};
+    this.errors = { name: ['hola mundo']};
   }
 
   any() {
