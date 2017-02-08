@@ -25,7 +25,7 @@ Following tutorial from [Learn Vue 2: Step by step](https://laracasts.com/series
 - [X] Object-oriented forms: Part 1
 - [X] Object-oriented forms: Part 2
 - [X] Object-oriented forms: Part 3
-- [ ] Webpack config from scratch
+- [X] Webpack config from scratch
 - [ ] This is Laravel mix
 - [ ] Shared state 101
 - [ ] Custom input components
