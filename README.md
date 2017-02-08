@@ -21,8 +21,8 @@ Following tutorial from [Learn Vue 2: Step by step](https://laracasts.com/series
 - [X] Single-use components and inline templates
 - [X] Webpack and vue-cli
 - [X] Hot module replacement
-- [ ] Vue Ajax Requests with axios
-- [ ] Object-oriented forms: Part 1
+- [X] Vue Ajax Requests with axios
+- [X] Object-oriented forms: Part 1
 - [ ] Object-oriented forms: Part 2
 - [ ] Object-oriented forms: Part 3
 - [ ] Webpack config from scratch
