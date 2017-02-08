@@ -1,20 +1,18 @@
 <template>
   <div id="app" class="container">
-    <message>Hello there again!</message>
-    <counter></counter>
-    <form method="GET" @submit.prevent="onSubmit" @keydown="errors.clear($event.target.name)">
+    <form method="GET" @submit.prevent="onSubmit" @keydown="form.errors.clear($event.target.name)">
       <div class="control">
         <label for="name" class="label">Project name:</label>
-        <input type="text" id="name" name="name" class="input" v-model="name">
-        <span class="help is-danger" v-if="errors.has('name')" v-text="errors.get('name')"></span>
+        <input type="text" id="name" name="name" class="input" v-model="form.name">
+        <span class="help is-danger" v-if="form.errors.has('name')" v-text="form.errors.get('name')"></span>
       </div>
       <div class="control">
         <label for="description" class="label">Project description:</label>
-        <input type="text" id="description" name="description" class="input" v-model="description">
-        <span class="help is-danger" v-if="errors.has('description')" v-text="errors.get('description')"></span>
+        <input type="text" id="description" name="description" class="input" v-model="form.description">
+        <span class="help is-danger" v-if="form.errors.has('description')" v-text="form.errors.get('description')"></span>
       </div>
       <div class="control">
-        <button class="button is-primary" :disabled="errors.any()">Create</button>
+        <button class="button is-primary" :disabled="form.errors.any()">Create</button>
       </div>
     </form>
 
@@ -22,12 +20,9 @@
 </template>
 
 <script>
-import Message from './components/Message.vue';
-import Counter from './components/Counter.vue';
-
 class Errors {
   constructor() {
-    this.errors = { name: ['hola mundo']};
+    this.errors = { name: ['hola mundo'] };
   }
 
   any() {
@@ -49,31 +44,73 @@ class Errors {
   }
 
   clear(field) {
-    delete this.errors[field];
+    if(field) {
+      delete this.errors[field];
+    } else {
+      this.errors = {};
+    }
+  }
+}
+
+class Form {
+  constructor(data){
+    this.originalData = data;
+
+    for(let field in data) {
+      this[field] = data[field];
+    }
+
+    this.errors = new Errors();
+  }
+
+  data() {
+    let data = Object.assign({}, this);
+
+    delete data.originalData;
+    delete data.errors;
+
+    return data;
+  }
+
+  onFail(error) {
+    this.errors.record(error.response.data);
+  }
+
+  onSuccess(response) {
+    this.reset();
+    alert(response.data.message);
+  }
+
+  reset() {
+    for(let field in this.originalData) {
+      this[field] = '';
+    }
+
+    this.errors.clear();
+  }
+
+  submit(requestType, url) {
+    console.log(requestType);
+    axios[requestType](url, this.data())
+      .then(this.onSuccess.bind(this))
+      .catch(this.onFail.bind(this));
+
   }
 }
 
 export default {
-  components: { Counter, Message },
   data () {
     return {
-      description: '',
-      errors: new Errors(),
-      name: ''
+      form: new Form({
+        description: '',
+        name: ''
+      })
     }
   },
   methods: {
     onSubmit() {
-      axios.get('http://www.omdbapi.com/?t=Harry+Potter&y=&plot=short&r=json')
-        .then(this.onSuccess)
-        .catch(error => this.errors.record(error.response.data));
+      this.form.submit('post', 'someURL');
     },
-
-    onSuccess(response) {
-      this.name = '';
-      this.description = '';
-      alert(response.data.message);
-    }
   },
   name: 'app'
 }

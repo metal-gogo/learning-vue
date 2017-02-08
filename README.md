@@ -23,7 +23,7 @@ Following tutorial from [Learn Vue 2: Step by step](https://laracasts.com/series
 - [X] Hot module replacement
 - [X] Vue Ajax Requests with axios
 - [X] Object-oriented forms: Part 1
-- [ ] Object-oriented forms: Part 2
+- [X] Object-oriented forms: Part 2
 - [ ] Object-oriented forms: Part 3
 - [ ] Webpack config from scratch
 - [ ] This is Laravel mix
