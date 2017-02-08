@@ -20,7 +20,7 @@ Following tutorial from [Learn Vue 2: Step by step](https://laracasts.com/series
 - [X] Named slots in a nutshell
 - [X] Single-use components and inline templates
 - [X] Webpack and vue-cli
-- [ ] Hot module replacement
+- [X] Hot module replacement
 - [ ] Vue Ajax Requests with axios
 - [ ] Object-oriented forms: Part 1
 - [ ] Object-oriented forms: Part 2
