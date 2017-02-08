@@ -1,23 +1,26 @@
 import Vue from 'vue';
 
-let store = {
-  user: {
-    name: "John Doe"
-  }
-};
+Vue.component('coupon', {
+  methods: {
+    updateCode(code) {
+      if(code === 'ALLFREE') {
+        alert("WHOOO");
 
-new Vue({
-  el: '#one',
-  data: {
-    shared: store,
-    foo: 'bar'
-  }
+        this.$refs.input.value = code = '';
+      }
+
+      this.$emit('input', code);
+    }
+  },
+  props: ['code'],
+  template: `
+    <input type="text" :value="code" @input="updateCode($event.target.value)" ref="input">
+  `
 });
 
 new Vue({
-  el: '#two',
+  el: '#app',
   data: {
-    shared: store,
-    foo: 'other bar'
+    coupon: 'Freebie'
   }
 });

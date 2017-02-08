@@ -28,6 +28,6 @@ Following tutorial from [Learn Vue 2: Step by step](https://laracasts.com/series
 - [X] Webpack config from scratch
 - [X] This is Laravel mix
 - [X] Shared state 101
-- [ ] Custom input components
+- [X] Custom input components
 - [ ] Vue SPA Essentials: Routing
 - [ ] SPAs and the backend
