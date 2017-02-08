@@ -43,3 +43,9 @@ atlassian-ide-plugin.xml
 node_modules/
 .tmp
 *.log
+
+
+.DS_Store
+node_modules/
+dist/
+npm-debug.log
