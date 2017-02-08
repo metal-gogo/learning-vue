@@ -27,7 +27,7 @@ Following tutorial from [Learn Vue 2: Step by step](https://laracasts.com/series
 - [X] Object-oriented forms: Part 3
 - [X] Webpack config from scratch
 - [X] This is Laravel mix
-- [ ] Shared state 101
+- [X] Shared state 101
 - [ ] Custom input components
 - [ ] Vue SPA Essentials: Routing
 - [ ] SPAs and the backend

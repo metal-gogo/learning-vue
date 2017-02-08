@@ -1,10 +1,23 @@
 import Vue from 'vue';
-import Axios from 'axios';
-import App from './App.vue';
 
-window.axios = Axios;
+let store = {
+  user: {
+    name: "John Doe"
+  }
+};
 
 new Vue({
-  el: '#app',
-  render: h => h(App)
+  el: '#one',
+  data: {
+    shared: store,
+    foo: 'bar'
+  }
+});
+
+new Vue({
+  el: '#two',
+  data: {
+    shared: store,
+    foo: 'other bar'
+  }
 });
