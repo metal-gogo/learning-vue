@@ -30,4 +30,4 @@ Following tutorial from [Learn Vue 2: Step by step](https://laracasts.com/series
 - [X] Shared state 101
 - [X] Custom input components
 - [X] Vue SPA Essentials: Routing
-- [ ] SPAs and the backend
+- [X] SPAs and the backend
