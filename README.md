@@ -29,5 +29,5 @@ Following tutorial from [Learn Vue 2: Step by step](https://laracasts.com/series
 - [X] This is Laravel mix
 - [X] Shared state 101
 - [X] Custom input components
-- [ ] Vue SPA Essentials: Routing
+- [X] Vue SPA Essentials: Routing
 - [ ] SPAs and the backend
